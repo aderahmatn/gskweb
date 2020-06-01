@@ -16,6 +16,8 @@
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="<?= base_url() . 'assets/css/settings.css' ?>" />
   <link rel="stylesheet" href="<?= base_url() . 'assets/css/style.css' ?>" />
+  <link href="<?= base_url() . 'assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css' ?>" rel="stylesheet">
+  <link href="<?= base_url() . 'assets/plugins/toastr/toastr.min.css' ?>" rel="stylesheet">
 
   <style>
     .hero-form .form-group button {
@@ -66,6 +68,17 @@
     .header-btns .btn-2 {
       margin: 0;
     }
+
+    .content-right-content p,
+    .content-left-content p {
+
+      text-align: justify;
+    }
+
+    .single-footer .footer-text p {
+
+      text-align: justify;
+    }
   </style>
   <script type="text/javascript">
     window.$crisp = [];
@@ -88,7 +101,7 @@
         <div class="row justify-content-center align-items-center position-relative">
           <div class="col-sm-3 col-6 col-lg-2 col-xl-2 order-lg-1">
             <div class="brand">
-              <a href=""><img src="<?= base_url() . 'assets/image/gisaka-logo.png' ?>" alt="" style="height: 40px;" /></a>
+              <a href="<?= base_url() ?>"><img src="<?= base_url() . 'assets/image/gisaka-logo.png' ?>" alt="" style="height: 40px;" /></a>
             </div>
           </div>
           <div class="col-sm-8 col-lg-3 col-xl-3 d-none d-sm-block order-lg-3">
@@ -102,8 +115,8 @@
           <div class="col-sm-1 col-6 col-lg-7 col-xl-6 offset-xl-1 position-static order-lg-2">
             <div class="main-navigation">
               <ul class="main-menu">
-                <li class="menu-item"><a href="#home">Beranda</a></li>
-                <li class="menu-item"><a href="#pricing">Blog</a></li>
+                <li class="menu-item"><a href="<?= base_url() ?>">Beranda</a></li>
+                <li class="menu-item"><a href="<?= base_url() . 'blog' ?>" target="_blank">Blog</a></li>
                 <li class="menu-item">
                   <a href="#layanan"> Layanan</a>
                 </li>
@@ -123,161 +136,7 @@
         </div>
       </div>
     </header>
-    <!-- Hero Area  -->
-    <section class="hero-area">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-5 order-lg-2">
-            <div class="hero-image">
-              <img src="<?= base_url() . 'assets/image/landing-hero.svg' ?>" alt="" />
-            </div>
-          </div>
-          <div class="col-lg-7 order-lg-1">
-            <div class="hero-content">
-              <h1>Rekan yang handal untuk perkembangan bisnis anda.</h1>
-              <p>
-                Dengan teknologi terbaru kami akan memberikan solusi yang simpel untuk beberapa tugas rumit anda.
-              </p>
-              <div class="hero-form">
-                <form action="#footer">
-                  <div class="form-group">
-                    <button class="submit-btn">Dapat Solusi</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Layanan Area  -->
-    <section class="pricing-section" id="layanan">
-      <div class="container">
-        <div class="section-title text-center">
-          <h2>Layanan Terbaik Untuk Bisnis Anda</h2>
-        </div>
-        <div class="row mb-d-30 justify-content-center">
-          <div class="col-md-6 col-lg-4 mb--30">
-            <div class="justify-content-center">
-
-            </div>
-            <div class="feature-card">
-              <div class="card-icon">
-                <i class="fas fa-network-wired"></i>
-              </div>
-              <div class="card-content">
-                <h3>Network installation</h3>
-                <p>
-                  Simplify your life with a votice-controlled device.
-                </p>
-                <div class="content-link">
-                  <a href="" data-toggle="modal" data-target="#modalNetwork">Pelajari Selengkapnya <i class="icon icon-minimal-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb--30">
-            <div class="feature-card">
-              <div class="card-icon ">
-                <i class="fas fa-wifi"></i>
-              </div>
-              <div class="card-content">
-                <h3>Wireless solution</h3>
-                <p>
-                  Call anytime, our customer service expert are always ready
-                  to help!
-                </p>
-                <div class="content-link">
-                  <a href="">Pelajari Selengkapnya <i class="icon icon-minimal-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb--30">
-            <div class="feature-card">
-              <div class="card-icon">
-                <i class="fas fa-pencil-ruler"></i>
-              </div>
-              <div class="card-content">
-                <h3>Design Visual</h3>
-                <p>
-                  A Gisaka plan means your price is locked in, but you aren't.
-                </p>
-                <div class="content-link">
-                  <a href="">Pelajari Selengkapnya <i class="icon icon-minimal-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb--30">
-            <div class="feature-card">
-              <div class="card-icon">
-                <i class="fas fa-mobile-alt"></i>
-              </div>
-              <div class="card-content">
-                <h3>Software Development</h3>
-                <p>
-                  A Gisaka plan means your price is locked in, but you aren't.
-                </p>
-                <div class="content-link">
-                  <a href="">Pelajari Selengkapnya <i class="icon icon-minimal-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb--30">
-            <div class="feature-card">
-              <div class="card-icon">
-                <i class="fas fa-tools"></i>
-              </div>
-              <div class="card-content">
-                <h3>Maintenance service</h3>
-                <p>
-                  A Gisaka plan means your price is locked in, but you aren't.
-                </p>
-                <div class="content-link">
-                  <a href="">Pelajari Selengkapnya <i class="icon icon-minimal-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Tentang Kami  -->
-    <section class="feature-section" id="tentang">
-      <div class="shape">
-        <img src="<?= base_url() . 'assets/image/landing-1-shape.svg' ?>" alt="" />
-      </div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-3 col-lg-6 col-md-5 col-sm-6 col-10">
-            <div class="content-img">
-              <img src="<?= base_url() . 'assets/image/tentang-kami.svg' ?>" alt="" />
-            </div>
-          </div>
-          <div class="col-xl-7 offset-xl-1 col-lg-6 col-md-7 col-sm-6">
-            <div class="content-left-content">
-              <h2>Tentang Kami</h2>
-              <p>
-                Event is not like most tech conferences. We want our
-                presentations to engage the audience, spark discussion and
-                inspire new ideas.
-              </p>
-              <div class="content-bottom-part">
-                <p>
-                  Interested to see how it works? Schedule a free demo to get
-                  to learn everything you need to know.
-                </p>
-                <!-- <div class="content-btn">
-                  <a href="#" class="btn btn--primary">Kontak Kami</a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <?= $contents ?>
     <!-- Footer Section 06 -->
     <div class="footer-section" id="footer">
       <div class="container">
@@ -288,18 +147,18 @@
                 <div class="hero-content">
                   <h1>Hubungi Kami</h1>
                   <div class="footer-newsletter-form">
-                    <form action="">
+                    <form action="<?=base_url('landing/submit')?>" method="POST">
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nama Lengkap">
+                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="Name" required>
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email Anda">
+                        <input type="email" class="form-control" placeholder="Email Anda" name="Email" required>
                       </div>
                       <div class="form-group">
-                        <textarea class="form-control" rows="3" placeholder="Pesan"></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Pesan" name="Message" required></textarea>
                       </div>
                       <div class="form-group">
-                        <button class="submit-btn">Kirim</button>
+                        <button class="submit-btn" type="submit">Kirim</button>
                       </div>
                     </form>
                   </div>
@@ -328,9 +187,7 @@
               </div>
               <div class="footer-text">
                 <p>
-                  Big, small, online, offline, local. Size doesn't matter. We
-                  work on diverse projects for top brands as well as for cool
-                  startups.
+                  Berpegang teguh pada profesionalisme kerja serta berkomitmen atas setiap pelayanannya, bahwa kami percaya mampu memberikan product & jasa yang berkualitas dan konsisten serta memiliki nilai tambah demi tercapainya tujuan bersama.
                 </p>
               </div>
               <ul class="footer-social-list">
@@ -346,7 +203,7 @@
                 </li>
                 <li>
                   <a href="">
-                    <i class="fab fa-youtube"></i>  
+                    <i class="fab fa-youtube"></i>
                   </a>
                 </li>
                 <li>
@@ -359,7 +216,7 @@
                     <i class="fab fa-instagram"></i>
                   </a>
                 </li>
-                
+
               </ul>
             </div>
           </div>
@@ -409,20 +266,39 @@
   <script src="<?= base_url() . 'assets/plugins/meanmenu/jquery.meanmenu.js' ?>"></script>
   <!-- Plugins JS -->
   <script src="<?= base_url() . 'assets/js/active.js' ?>"></script>
+  <script src="<?= base_url() . 'assets/plugins/sweetalert2/sweetalert2.min.js' ?>"></script>
+  <script src="<?= base_url() . 'assets/plugins/toastr/toastr.min.js' ?>"></script>
 </body>
 
 </html>
-
-<!-- Modal -->
-<div class="modal fade" id="modalNetwork" tabindex="-1" role="dialog" aria-labelledby="modalNetwork" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <p>Kami akan memberikan solusi terbaik mengenai instalasi jaringan untuk membantu </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+<script type="text/javascript">
+  $(function() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 10000
+    });
+    <?php if ($this->session->flashdata('success')) { ?>
+      Toast.fire({
+        type: 'success',
+        title: '<?= $this->session->flashdata('success'); ?>'
+      });
+    <?php } else if ($this->session->flashdata('error')) {  ?>
+      Toast.fire({
+        type: 'error',
+        title: '<?= $this->session->flashdata('error'); ?>'
+      });
+    <?php } else if ($this->session->flashdata('warning')) {  ?>
+      Toast.fire({
+        type: 'warning',
+        title: '<?= $this->session->flashdata('warning'); ?>'
+      });
+    <?php } else if ($this->session->flashdata('info')) {  ?>
+      Toast.fire({
+        type: 'info',
+        title: '<?= $this->session->flashdata('info'); ?>'
+      });
+    <?php } ?>
+  });
+</script>
